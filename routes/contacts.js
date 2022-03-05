@@ -19,6 +19,10 @@ router.get('/:id', isLoggedIn, contactsCtrl.show)
 //POST localhost:3000/contacts/:id/notes
 router.post('/:id/notes', contactsCtrl.addNewNote)
 
+
+//DELETE
+router.delete('/:id', contactsCtrl.delete)
+
 export {
   router
 }

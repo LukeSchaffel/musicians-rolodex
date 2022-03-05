@@ -68,10 +68,22 @@ function addNewNote(req, res) {
   })
 }
 
+function deleteContact(req, res) {
+  Contact.findByIdAndDelete(req.params.id)
+  .then(contact => {
+    res.redirect("/contacts")
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/contacts")
+  })
+}
+
 export {
   index,
   newContact as new,
   create,
   show,
-  addNewNote
+  addNewNote,
+  deleteContact as delete
 }
