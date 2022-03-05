@@ -1,0 +1,35 @@
+
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+
+<main>
+  <h1>Enter New Contact Data</h1>
+  <form action="/contacts" method="POST">
+    <label>Name:
+      <input type="text">
+    </label>
+    <label>Email Address:
+      <input type="text">
+    </label>
+    <label>Phone Number:
+      <input type="text">
+    </label>
+    
+    <label>Instruments:
+      <select name="" id="">
+
+        <option value="">ejs of instruments</option>
+
+      </select>
+      add new
+    </label>
+
+    
+    <button type="submit">Add Flight</button>
+  </form>
+
+
+
+<%- include('../partials/footer') %>
+
