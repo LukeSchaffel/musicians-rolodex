@@ -10,19 +10,25 @@
   <% if (user) { %>
    
   
-  <form action="/contacts" method="POST" autocomplete="off">
-    <label>Name:
-      <input type="text" name="name">
+  <form action="/contacts" method="POST" autocomplete="off" >
+    <div class="mb-3">
+      <label class="form-label">Name:
+        <input type="text" name="name" class="form-control">
+      </label>
+  </div>
+  <br>
+  <div class="mb-3">
+    <label class="form-label">Email Address:
+      <input type="text" name="email" class="form-control">
     </label>
-    <br>
-    <label>Email Address:
-      <input type="text" name="email">
+  </div>
+  <br>
+  <divclass="mb-3">
+    <label class="form-label">Phone Number:
+      <input type="text" name="phoneNum" class="form-control">
     </label>
-    <br>
-    <label>Phone Number:
-      <input type="text" name="phoneNum">
-    </label>
-    <br>
+  </div>
+  <br>
 <!--     
     <label>Instruments:
       <select name="instruments" id="">
@@ -30,22 +36,31 @@
         <option value="">ejs of instruments</option>
 
       </select> -->
-     
-      <label>Location:
-        <input type="text" name="location">
-      </label>  
-      <br>
+  <divclass="mb-3">
+    <label class="form-label">Instrument:
+      <input type="text" name="" class="form-control">
     </label>
-    <label>
-      Willing to Travel?
-      <input type="checkbox" name="willingToTravel">
+  </div>
+  <br>
+  <divclass="mb-3">
+    <label class="form-label">Location:
+      <input type="text" name="location" class="form-control">
     </label>
-    <br>
-    <label>
-      Teaches?
-      <input type="checkbox" name="teaches">
+  </div>
+  <br>   
+  <divclass="mb-3">
+    <label class="form-check-label">Willing to Travel:
+      <input type="checkbox" name="willingToTravel" class="form-check-input">
     </label>
-    <br>
+  </div>
+  <br>
+  <divclass="mb-3">
+    <label class="form-check-label">Teaches:
+      <input type="checkbox" name="teaches" class="form-check-input">
+    </label>
+  </div>
+  <br> 
+
     
     <button type="submit">Save Contact</button>
   </form>
