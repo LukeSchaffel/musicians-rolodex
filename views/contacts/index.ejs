@@ -2,23 +2,10 @@
 <%- include('../partials/nav') %>
 
 
-<a href="/contacts/new">Add New Contact</a>
 <main>
-<h1>My Contacts</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email Address</th>
-        <th>Phone Number</th>
-        <th>Instrument</th>
-        <th>Location</th>
-        <th>Willing to Travel?</th>
-        <th>Teaches?</th>
-        
-      </tr>
-    </thead>
-    <tbody>
+  <h1>My Contacts</h1>
+  <a href="/contacts/new"><button>Add New Contact</button></a>
+  
 <% contacts.forEach(contact => { %>
   <div class="card">
     <h5 class="card-header"><%= contact.name %></h5>

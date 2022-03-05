@@ -1,7 +1,7 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-
+<main>
 <h1><%= contact.name  %> </h1>
 <table>
   <thead>
@@ -26,10 +26,10 @@
   <td><%= contact.location %></td>
   <td><%= contact.willingToTravel ? "Yes" : "No"  %> </td>
   <td> <%= contact.teaches ? "Yes" : "No"  %> </td>
-  <td><a href="/contacts/<%= contact._id %>">DETAILS</a></td>
+  
   <td>
     <form action="/contacts/<%= contact._id %>?_method=DELETE" method="POST">
-      <button>X</button>
+      <button>DELETE</button>
     </form>
   </td>
 </tr>
@@ -45,7 +45,7 @@
     <input type="text" name="content">
   </label>
   
-  <button type="submit">Add Ticket</button>
+  <button type="submit">Add Note</button>
 <% if (contact.notes.length) { %>
     <% contact.notes.forEach(function(note){ %> 
       <p>
@@ -60,6 +60,6 @@
     <h3>No Notes Yet</h3>
     <% } %> 
 
-  
+  </main>
 
 <%- include('../partials/footer') %>
