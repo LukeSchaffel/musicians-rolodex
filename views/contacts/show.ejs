@@ -1,0 +1,65 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+
+<h1><%= contact.name  %> </h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email Address</th>
+      <th>Phone Number</th>
+      <th>Instrument</th>
+      <th>Location</th>
+      <th>Willing to Travel?</th>
+      <th>Teaches?</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+
+<tr>
+  <td><%= contact.name %></td>
+  <td><%= contact.email %></td>
+  <td><%= contact.phoneNum %></td>
+  <td>placeholder</td>
+  <td><%= contact.location %></td>
+  <td><%= contact.willingToTravel ? "Yes" : "No"  %> </td>
+  <td> <%= contact.teaches ? "Yes" : "No"  %> </td>
+  <td><a href="/contacts/<%= contact._id %>">DETAILS</a></td>
+  <td>
+    <form action="/contacts/<%= contact._id %>?_method=DELETE" method="POST">
+      <button>X</button>
+    </form>
+  </td>
+</tr>
+
+
+<h2>Notes:</h2>
+<form 
+    id="add-note-form"
+    action="/contacts/<%= contact._id %>/notes"
+    method="POST"
+  >
+  <label>
+    <input type="text" name="content">
+  </label>
+  
+  <button type="submit">Add Ticket</button>
+<% if (contact.notes.length) { %>
+    <% contact.notes.forEach(function(note){ %> 
+      <p>
+      <td><%= note.content %></td>
+     </p>
+    <% }) %> 
+  </tbody>
+  </table>
+    
+
+  <% } else { %>
+    <h3>No Notes Yet</h3>
+    <% } %> 
+
+
+
+<%- include('../partials/footer') %>

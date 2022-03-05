@@ -5,8 +5,8 @@ import { Contact } from "../models/contact.js"
 function index(req, res) {
  
   // console.log(req.user.profile);
-  Contact.find({})
-
+  Contact.find({owner: req.user.profile._id})
+  .populate("owner")
   //if the contacts owner matches the user, show it?
   .then(contacts => {
     res.render('contacts/index', {
@@ -42,8 +42,36 @@ function create(req, res) {
   })
 }
 
+function show(req,res) {
+  Contact.findById(req.params.id)
+  // .populate('instruments')
+  .then (contact => {
+    res.render('contacts/show',{
+      contact,
+      title: contact.name
+    })
+  })
+}
+
+function addNewNote(req, res) {
+  Contact.findById(req.params.id)
+  .then(contact =>{
+    contact.notes.push(req.body)
+    contact.save()
+    .then(()=>{
+      res.redirect(`/contacts/${contact._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/contacts/${contact._id}`)
+    })
+  })
+}
+
 export {
   index,
   newContact as new,
-  create
+  create,
+  show,
+  addNewNote
 }

@@ -4,6 +4,37 @@
 
 <a href="/contacts/new">Add New Contact</a>
 
-
+<h1>My Contacts</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email Address</th>
+        <th>Phone Number</th>
+        <th>Instrument</th>
+        <th>Location</th>
+        <th>Willing to Travel?</th>
+        <th>Teaches?</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+<% contacts.forEach(contact => { %>
+  <tr>
+    <td><%= contact.name %></td>
+    <td><%= contact.email %></td>
+    <td><%= contact.phoneNum %></td>
+    <td>placeholder</td>
+    <td><%= contact.location %></td>
+    <td><%= contact.willingToTravel ? "Yes" : "No"  %> </td>
+    <td> <%= contact.teaches ? "Yes" : "No"  %> </td>
+    <td><a href="/contacts/<%= contact._id %>">DETAILS</a></td>
+    <td>
+      <form action="/contacts/<%= contact._id %>?_method=DELETE" method="POST">
+        <button>X</button>
+      </form>
+    </td>
+  </tr>
+<% }) %>
 
 <%- include('../partials/footer') %>

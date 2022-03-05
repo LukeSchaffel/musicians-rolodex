@@ -13,6 +13,12 @@ router.get('/new', contactsCtrl.new)
 //POST localhost:3000/contacts
 router.post('/', isLoggedIn, contactsCtrl.create)
 
+//GET localhost:3000/contacts/:id
+router.get('/:id', isLoggedIn, contactsCtrl.show)
+
+//POST localhost:3000/contacts/:id/notes
+router.post('/:id/notes', contactsCtrl.addNewNote)
+
 export {
   router
 }
