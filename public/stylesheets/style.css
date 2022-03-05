@@ -41,3 +41,8 @@ main {
 h1 {
   font-size: 3.6rem;
 }
+
+.card {
+  margin: 10px auto;
+  max-width: 70%;
+}
