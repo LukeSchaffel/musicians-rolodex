@@ -1,65 +1,53 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<main>
-<h1><%= contact.name  %> </h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email Address</th>
-      <th>Phone Number</th>
-      <th>Instrument</th>
-      <th>Location</th>
-      <th>Willing to Travel?</th>
-      <th>Teaches?</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-
-<tr>
-  <td><%= contact.name %></td>
-  <td><%= contact.email %></td>
-  <td><%= contact.phoneNum %></td>
-  <td>placeholder</td>
-  <td><%= contact.location %></td>
-  <td><%= contact.willingToTravel ? "Yes" : "No"  %> </td>
-  <td> <%= contact.teaches ? "Yes" : "No"  %> </td>
-  
-  <td>
-    <form action="/contacts/<%= contact._id %>?_method=DELETE" method="POST">
-      <button>DELETE</button>
-    </form>
-  </td>
-</tr>
-
-
-<h2>Notes:</h2>
-<form 
-    id="add-note-form"
-    action="/contacts/<%= contact._id %>/notes"
-    method="POST"
-  >
-  <label>
-    <input type="text" name="content">
-  </label>
-  
-  <button type="submit">Add Note</button>
-<% if (contact.notes.length) { %>
-    <% contact.notes.forEach(function(note){ %> 
-      <p>
-      <td><%= note.content %></td>
-     </p>
-    <% }) %> 
-  </tbody>
-  </table>
+  <main>
     
 
-  <% } else { %>
-    <h3>No Notes Yet</h3>
-    <% } %> 
 
+
+    <div class="card" style="width: 30rem;">
+      <div class="card-body">
+        <h1 class="card-title"><%= contact.name %></h5>
+        <h2 class="card-subtitle mb-2 text-muted">Instrument Placeholder</h6>
+        <p class="card-text">
+          Email Address: <%= contact.email %> <br>
+          Phone Number: <%= contact.phoneNum %> <br>
+          Location: <%= contact.location %> <br>
+          Will Travel? <%= contact.willingToTravel ? "Yes" : "No" %> <br>
+          WIll Teach? <%= contact.teaches ? "Yes" : "No" %> <br>
+        </p>
+        <div id="button-div">
+          <form action="/contacts/<%= contact._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">DELETE</button>
+          </form>
+          <form >
+            <button class="btn btn-outline-primary">EDIT</button>
+          </form>
+      </div>
+      </div>
+    </div>
+
+  <div id="notes-div">
+    <h2>Notes:</h2>
+    <form id="add-note-form" action="/contacts/<%= contact._id %>/notes" method="POST">
+      <label>
+        <input type="text" name="content">
+      </label>
+
+      <button type="submit">Add Note</button>
+      <% if (contact.notes.length) { %>
+        <% contact.notes.forEach(function(note){ %>
+          <p>
+            
+              <%= note.content %>
+            
+          </p>
+          <% }) %>
+      <% } else { %><h3>No Notes Yet</h3><% } %>
+              
+              
+  </div>
   </main>
 
-<%- include('../partials/footer') %>
+  <%- include('../partials/footer') %>

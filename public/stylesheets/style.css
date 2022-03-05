@@ -40,9 +40,24 @@ main {
 
 h1 {
   font-size: 3.6rem;
+  background-color: rgb(247, 247, 247);
+ 
+  padding: 20px;
 }
 
 .card {
+  font-size: 3.6rem;
   margin: 10px auto;
+  min-width: 500px;
   max-width: 70%;
+}
+
+#button-div {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.btn-danger {
+  margin: 0 20px;
 }
