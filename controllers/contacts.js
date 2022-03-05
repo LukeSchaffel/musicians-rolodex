@@ -28,7 +28,22 @@ function newContact(req, res) {
   })
 }
 
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  req.body.willingToTravel = !!req.body.willingToTravel
+  req.body.teaches = !!req.body.teaches
+  Contact.create(req.body)
+  .then(contact => {
+    res.redirect('/contacts')
+  })
+  .catch(err => {
+  console.log(err)
+  res.redirect("/contacts")
+  })
+}
+
 export {
   index,
-  newContact as new
+  newContact as new,
+  create
 }

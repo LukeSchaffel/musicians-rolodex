@@ -11,11 +11,12 @@ const contactSchema = new Schema({
   name: String,
   email: String,
   phoneNum: String,
-  instruments: [{type: Schema.Types.Object, ref: "Instrument"}],
+  instruments: [{type: Schema.Types.ObjectId, ref: "Instrument"}],
   location: String,
   willingToTravel: Boolean,
   teaches: Boolean,
-  notes: [noteSchema]
+  notes: [noteSchema],
+  owner: { type: Schema.Types.ObjectId, ref: "Profile" }
 }, {
   timestamps: true
 })

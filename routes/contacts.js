@@ -10,6 +10,9 @@ router.get('/', contactsCtrl.index)
 // GET localhost:3000/contacts/new
 router.get('/new', contactsCtrl.new)
 
+//POST localhost:3000/contacts
+router.post('/', isLoggedIn, contactsCtrl.create)
+
 export {
   router
 }

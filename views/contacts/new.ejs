@@ -4,32 +4,44 @@
 
 
 <main>
+
+
   <h1>Enter New Contact Data</h1>
+  <% if (user) { %>
+   
+  
   <form action="/contacts" method="POST">
     <label>Name:
-      <input type="text">
+      <input type="text" name="name">
     </label>
     <label>Email Address:
-      <input type="text">
+      <input type="text" name="email">
     </label>
     <label>Phone Number:
-      <input type="text">
+      <input type="text" name="phoneNum">
     </label>
-    
+<!--     
     <label>Instruments:
-      <select name="" id="">
+      <select name="instruments" id="">
 
         <option value="">ejs of instruments</option>
 
-      </select>
-      add new
+      </select> -->
+      
     </label>
-
+    <label>
+      Willing to Travel?
+      <input type="checkbox" name="willingToTravel">
+    </label>
+    <label>
+      Teaches?
+      <input type="checkbox" name="teaches">
+    </label>
     
-    <button type="submit">Add Flight</button>
+    <button type="submit">Save Contact</button>
   </form>
 
-
+  <% } %>
 
 <%- include('../partials/footer') %>
 
