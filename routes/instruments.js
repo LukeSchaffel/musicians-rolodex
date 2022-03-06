@@ -7,7 +7,7 @@ const router = Router()
 router.get("/new", instrumentsCtrl.new)
 
 //POST localhost:3000/instruments
-// router.post("/", instrumentsCtrl.create)
+router.post("/", instrumentsCtrl.create)
 
 export {
   router

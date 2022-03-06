@@ -10,8 +10,14 @@ function newInstrument(req, res) {
   })
 }
 
+function create(req, res) {
+  Instrument.create(req.body)
+  .then(res.redirect('/instruments/new'))
+}
+
 
 export {
-  newInstrument as new
+  newInstrument as new,
+  create
 
 }

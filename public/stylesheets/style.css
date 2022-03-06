@@ -61,3 +61,7 @@ h1 {
 .btn-danger {
   margin: 0 20px;
 }
+
+form {
+  font-size: 30px;
+}

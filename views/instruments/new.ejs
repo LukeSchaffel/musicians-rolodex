@@ -2,5 +2,27 @@
 <%- include('../partials/nav') %>
 
 
+<main>
+  <form action="/instruments" method="POST" autocomplete="off" >
+    <div class="mb-3">
+      <label class="form-label">Instrument:
+        <input type="text" name="name" class="form-control">
+      </label>
+  </div>
+  <br>
+    <button type="submit">Add New Instrument</button>
+  </form>
+
+  <% instruments.forEach(instrument => { %>
+   
+  
+  <div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"> <%= instrument.name %>  </li> 
+    </ul>
+  </div>
+  <% }) %>
+
+</main>
 
 <%- include('../partials/footer') %>
