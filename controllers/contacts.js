@@ -24,9 +24,17 @@ function index(req, res) {
 
 
 function newContact(req, res) {
-  res.render("contacts/new", {
-    title: "New Contact"
+  Instrument.find({})
+  .then(instruments => {
+    res.render("contacts/new", {
+      title: "New Contact",
+      instruments
+    })
   })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/contacts")
+    })
 }
 
 function create(req, res) {
@@ -83,10 +91,12 @@ function deleteContact(req, res) {
 function edit(req, res) {
   Contact.findById(req.params.id)
   .then(contact => {
-    res.render('contacts/edit', {
+    Instrument.find({})
+    .then(instruments => res.render('contacts/edit', {
       contact,
-      title: "Edit Contact"
-    })
+      title: "Edit Contact",
+      instruments
+    }))  
   })
   .catch(err => {
     console.log(err)

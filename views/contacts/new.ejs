@@ -29,27 +29,15 @@
     </label>
   </div>
   <br>
-<!--     
-    <label>Instruments:
-      <select name="instruments" id="">
-
-        <option value="">ejs of instruments</option>
-
-      </select> -->
-  <divclass="mb-3">
-    <label class="form-label">Instruement:
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </label>
-  </div>
-  <br>   
   <divclass="mb-3">
     <label class="form-label">Instrument:
-      <input type="text" name="" class="form-control">
+      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="instrument">
+        <option selected>Instrument</option>
+        <% instruments.forEach(instrument => { %>
+          <option value="<%= instrument.name %>"> <%= instrument.name %>  </option>
+        <% }) %>
+     
+      </select>
     </label>
   </div>
   <br>

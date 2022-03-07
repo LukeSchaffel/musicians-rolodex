@@ -11,7 +11,7 @@ const contactSchema = new Schema({
   name: String,
   email: String,
   phoneNum: String,
-  instruments: [{type: Schema.Types.ObjectId, ref: "Instrument"}],
+  instrument: String,
   location: String,
   willingToTravel: Boolean,
   teaches: Boolean,
