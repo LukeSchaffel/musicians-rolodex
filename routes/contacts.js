@@ -10,6 +10,12 @@ router.get('/', contactsCtrl.index)
 // GET localhost:3000/contacts/new
 router.get('/new', contactsCtrl.new)
 
+//GET localhost:3000/contacts/:id/edit
+router.get('/:id/edit', isLoggedIn, contactsCtrl.edit)
+
+//PUT localhost:3000/contacts/:id
+router.put('/:id/', isLoggedIn, contactsCtrl.update)
+
 //POST localhost:3000/contacts
 router.post('/', isLoggedIn, contactsCtrl.create)
 

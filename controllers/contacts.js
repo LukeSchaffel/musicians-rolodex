@@ -80,11 +80,52 @@ function deleteContact(req, res) {
   })
 }
 
+function edit(req, res) {
+  Contact.findById(req.params.id)
+  .then(contact => {
+    res.render('contacts/edit', {
+      contact,
+      title: "Edit Contact"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/tacos")
+  }) 
+}
+
+function update(req, res) {
+  Contact.findById(req.params.id)
+  .populate("owner")
+  .then(contact => {
+    console.log(req.user.profile._id);
+    // if (contact.body.owner.equals(req.user.profile._id)) {
+      req.body.willingToTravel = !!req.body.willingToTravel
+      req.body.teaches = !!req.body.teaches
+      contact.updateOne(req.body, {new: true})
+      .then(()=> {
+        res.redirect(`/contacts/${req.params.id}`)
+      })
+    // } else {
+    //   }  throw new Error("NOT AUTHORIZED")
+    })
+    .catch(err => {
+      console.log("the error:", err)
+      res.redirect("/contacts")
+    })
+  }
+
+
+
+
+
 export {
   index,
   newContact as new,
   create,
   show,
   addNewNote,
-  deleteContact as delete
+  deleteContact as delete,
+  edit,
+  update
 }

@@ -21,7 +21,7 @@
           <form action="/contacts/<%= contact._id %>?_method=DELETE" method="POST">
             <button class="btn btn-danger">DELETE</button>
           </form>
-          <form >
+          <form action="/contacts/<%= contact._id %>/edit" method="GET">
             <button class="btn btn-outline-primary">EDIT</button>
           </form>
       </div>
