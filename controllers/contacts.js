@@ -125,6 +125,20 @@ function update(req, res) {
     })
   }
 
+function deleteNote(req, res) {
+  Contact.findById(req.params.contactId)
+  .then(contact=>{
+    contact.notes.remove({_id: req.params.noteId})
+    contact.save()
+    .then(()=>{
+      res.redirect(`/contacts/${req.params.contactId}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/contacts/${req.params.contactId}`)
+  })
+}  
 
 
 
@@ -137,5 +151,6 @@ export {
   addNewNote,
   deleteContact as delete,
   edit,
-  update
+  update,
+  deleteNote
 }

@@ -34,14 +34,17 @@
       <label>
         <input type="text" name="content">
       </label>
-
       <button type="submit">Add Note</button>
+    </form>  
       <% if (contact.notes.length) { %>
         <% contact.notes.forEach(function(note){ %>
           <p>
-            
               <%= note.content %>
-            
+              <form action="/contacts/<%= contact._id %>/notes/<%= note.id %>?_method=DELETE" method="POST" style="display: inline-block;">
+              
+              <button type="submit">X</button>
+              
+              </form>
           </p>
           <% }) %>
       <% } else { %><h3>No Notes Yet</h3><% } %>
