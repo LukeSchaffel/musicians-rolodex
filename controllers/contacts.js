@@ -3,6 +3,7 @@ import { Instrument } from "../models/instrument.js"
 
 
 
+
 function index(req, res) {
  
   // console.log(req.user.profile);
@@ -141,12 +142,18 @@ function deleteNote(req, res) {
 }  
 
 function editNote (req, res) {
+  console.log(req.params.noteId)
   Contact.findById(req.params.contactId)
   .then(contact => {
+    console.log(contact)
+    const myNote = contact.notes.filter(note => {
+     return note._id.toString() === req.params.noteId
+    })
+    console.log(myNote)
       res.render('contacts/edit-note', {
         contact,
-        title: "Contacts List",
-        note: req.params.noteId
+        title: "Edit Note",
+        note: myNote[0]
       })
     })   
   }

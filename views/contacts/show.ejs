@@ -43,7 +43,7 @@
               <form action="/contacts/<%= contact._id %>/notes/<%= note.id %>?_method=DELETE" method="POST" style="display: inline-block;">
               <button type="submit">X</button>
               </form>
-              <form action="/contacts/<%= contact._id %>/notes/<%= note._id %>" method="GET">
+              <form action="/contacts/<%= contact._id %>/notes/<%= note._id %>" method="GET" name="noteId">
               <button type="submit">Edit Note</button>
               </form>
           </p>
