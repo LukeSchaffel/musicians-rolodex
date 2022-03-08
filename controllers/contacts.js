@@ -140,6 +140,16 @@ function deleteNote(req, res) {
   })
 }  
 
+function editNote (req, res) {
+  Contact.findById(req.params.contactId)
+  .then(contact => {
+      res.render('contacts/edit-note', {
+        contact,
+        title: "Contacts List",
+        note: req.params.noteId
+      })
+    })   
+  }
 
 
 
@@ -152,5 +162,6 @@ export {
   deleteContact as delete,
   edit,
   update,
-  deleteNote
+  deleteNote,
+  editNote
 }

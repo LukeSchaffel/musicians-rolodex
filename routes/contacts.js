@@ -25,6 +25,9 @@ router.get('/:id', isLoggedIn, contactsCtrl.show)
 //POST localhost:3000/contacts/:id/notes
 router.post('/:id/notes', contactsCtrl.addNewNote)
 
+//GET render an update page for a note localhost:3000/contacts/contactId/notes/noteId
+router.get('/:contactId/notes/:noteId', contactsCtrl.editNote)
+
 //DELETE - localhost:3000/contacts/:id/notes/:id
 router.delete("/:contactId/notes/:noteId", isLoggedIn, contactsCtrl.deleteNote)
 
