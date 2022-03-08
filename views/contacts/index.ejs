@@ -1,7 +1,19 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-
-
+<form
+  action="/contacts"
+  method="GET"
+  class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
+          >
+<input
+    id="search"
+    class="form-control form-control-dark"
+    type="search"
+    name="name"
+    placeholder="Search name..."
+    value=" <%= contacts.name %> "
+    autocomplete="off"
+  />
 <main>
   <h1>My Contacts</h1>
   <a href="/contacts/new"><button class="btn btn-primary">Add New Contact</button></a>
