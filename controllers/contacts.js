@@ -155,37 +155,18 @@ function editNote (req, res) {
     })   
   }
  
-  function updateNote(req, res) {
-    Contact.findById(req.params.contactId)
-    .then(contact => {
-      console.log(req.body.content);
-      contact.notes.id(req.params.noteId).content = req.body.content
-      contact.save()
-      .then(() => {
-        res.redirect(`/contacts/${req.params.contactId}`)
-      })    
-    })
-    
-  }
-
-
-
-// function updateNote(req, res) {
-//   Contact.findById(req.params.contactId)
-//   .then(contact => {
-//     contact.notes.id(req.params.noteId).updateOne(req.body, {new: true})
-//     contact.save()    
-//   })
-//   .then(() => {
-//     res.redirect('/')
-//   })
-// }
-
-
-
-// const myNote = contact.notes.filter(note => {
-//   return note._id.toString() === req.params.noteId
-//  })
+function updateNote(req, res) {
+  Contact.findById(req.params.contactId)
+  .then(contact => {
+    console.log(req.body.content);
+    contact.notes.id(req.params.noteId).content = req.body.content
+    contact.save()
+    .then(() => {
+      res.redirect(`/contacts/${req.params.contactId}`)
+    })    
+  })
+  
+}
 
 export {
   index,

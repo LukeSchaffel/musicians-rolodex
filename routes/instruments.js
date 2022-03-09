@@ -9,7 +9,7 @@ router.get("/new", instrumentsCtrl.new)
 //POST localhost:3000/instruments
 router.post("/", instrumentsCtrl.create)
 
-router.delete("/instruments/:id", instrumentsCtrl.delete)
+router.delete('/:id', instrumentsCtrl.delete)
 
 export {
   router
