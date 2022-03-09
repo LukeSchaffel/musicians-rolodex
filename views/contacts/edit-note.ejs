@@ -1,7 +1,16 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<main>
+  <div>
+    <form action="/contacts/<%= contact.id %>/notes/<%= note._id %>?_method=PUT" method="POST">
+      <input type="text" value="<%= note.content %>" name="content">
+      <button type="submit">Update Note</button>
+    </form>
+  </div>
 
+
+</main>
  <h1><%= note.content %> </h1>
 
 

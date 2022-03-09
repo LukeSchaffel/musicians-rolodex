@@ -18,7 +18,9 @@
   
   <div class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item"> <%= instrument.name %>  </li> 
+      <li class="list-group-item"> <%= instrument.name %> 
+      <form action="/instrument/<%= instrument._id%>?_method=DELETE" method="GET" ><button type="submit">X</button></form>
+      </li> 
     </ul>
   </div>
   <% }) %>

@@ -9,6 +9,8 @@ router.get("/new", instrumentsCtrl.new)
 //POST localhost:3000/instruments
 router.post("/", instrumentsCtrl.create)
 
+router.delete("/instruments/:id", instrumentsCtrl.delete)
+
 export {
   router
 }

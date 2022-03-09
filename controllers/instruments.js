@@ -15,9 +15,14 @@ function create(req, res) {
   .then(res.redirect('/instruments/new'))
 }
 
+function deleteInstrument(req, res) {
+  console.log("delete button");
+}
+
 
 export {
   newInstrument as new,
-  create
+  create,
+  deleteInstrument as delete
 
 }
