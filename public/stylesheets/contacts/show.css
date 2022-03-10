@@ -1,0 +1,23 @@
+p {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+#notes-div {
+  max-width: 478px;
+  padding: 3px;
+  font-size: 2rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+}
+
+form {
+  font-size: 2rem;
+}

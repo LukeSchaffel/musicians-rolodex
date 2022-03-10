@@ -1,15 +1,12 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/contacts/show.css">
 <%- include('../partials/nav') %>
 
-  <main>
-    
-
-
-
+  <main>    
     <div class="card" style="width: 30rem;">
       <div class="card-body">
         <h1 class="card-title"><%= contact.name %></h5>
-        <h2 class="card-subtitle mb-2 text-muted"> <%= contact.instrument %>  </h6>
+        <h2 class="card-subtitle mb-2 text-muted"> <%= contact.instrument %>  </h2>
         <p class="card-text">
           Email Address: <%= contact.email %> <br>
           Phone Number: <%= contact.phoneNum %> <br>
@@ -28,29 +25,34 @@
       </div>
     </div>
 
-  <div id="notes-div">
-    <h2>Notes:</h2>
-    <form id="add-note-form" action="/contacts/<%= contact._id %>/notes" method="POST">
-      <label>
-        <input type="text" name="content">
-      </label>
-      <button type="submit">Add Note</button>
-    </form>  
-      <% if (contact.notes.length) { %>
-        <% contact.notes.forEach(function(note){ %>
-          <p>
-              <%= note.content %>
-              <form action="/contacts/<%= contact._id %>/notes/<%= note.id %>?_method=DELETE" method="POST" style="display: inline-block;">
-              <button type="submit">X</button>
-              </form>
-              <form action="/contacts/<%= contact._id %>/notes/<%= note._id %>" method="GET" name="noteId">
-              <button type="submit">Edit Note</button>
-              </form>
-          </p>
-          <% }) %>
-      <% } else { %><h3>No Notes Yet</h3><% } %>
+  <div id="notes-div" class="card" style="width: 30rem;">
+    <div class="card-body"></div>
+      <h2 class="card-title">Notes:</h2>
+
+      <form id="add-note-form" action="/contacts/<%= contact._id %>/notes" method="POST" class="card-subtitle mb-2 text-muted">
+        <label>
+          <input type="text" name="content">
+        </label>
+        <button type="submit">Add Note</button>
+      </form>  
+
+        <ul class="card-text">
+        <% if (contact.notes.length) { %>
+          <% contact.notes.forEach(function(note){ %>
+            <li  id="note-text">
+                <%= note.content %>
+                <form action="/contacts/<%= contact._id %>/notes/<%= note.id %>?_method=DELETE" method="POST" style="display: inline-block;">
+                <button type="submit" class="btn btn-danger">DELETE</button>
+                </form>
+                <form action="/contacts/<%= contact._id %>/notes/<%= note._id %>" method="GET" name="noteId">
+                <button type="submit" class="btn btn-outline-primary">Edit Note</button>
+                </form>
+              </li>
+            <% }) %>
+        </ul>
+        <% } else { %><h3>No Notes Yet</h3><% } %>
               
-              
+      </div>        
   </div>
   </main>
 

@@ -5,9 +5,11 @@
 <body>
   <nav>
     <!-- <h1>Hello  </h1> -->
-
-    <a href="/contacts"><button type="button" class="btn btn-primary btn-lg">Your Contacts</button></a>
-    <a href="/instruments/new"><button type="button" class="btn btn-primary btn-lg">Instruments</button></a>
+    <% if (user) { %>
+     
+      <a href="/contacts"><button type="button" class="btn btn-primary btn-lg">Your Contacts</button></a>
+      <a href="/instruments/new"><button type="button" class="btn btn-primary btn-lg">Instruments</button></a>
+    <% } %>
     
     <% if (user) { %>
       <a href="/auth/logout">
