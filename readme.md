@@ -13,6 +13,9 @@ Each user who signs in with their google account will be able to privatly store 
 
 # [Check it out here!](https://musicians-rolodex-ls.herokuapp.com/)
 
+# [My Planning Process](https://trello.com/b/L7Y7Z2Cl/unit-2-project/)
+
+
 ---
 
 ### Viewing All of My Contacts:
