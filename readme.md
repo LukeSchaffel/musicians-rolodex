@@ -3,9 +3,11 @@
 
 ---
 
-The Musicians Rolodex is a full stack application that works just like any contacts application that you have used, but with the needs of a working musician in mind. 
+The Musicians Rolodex is a full stack private workspace that works just like any vanilla contacts application, but with the needs of a working musician in mind. 
 
 Each contact card has storage for Name, Email Address, Instrumnet, Location, willingess to travel, wheather or not they are a teacher, and notes.
+
+Each user who signs in with their google account will be able to privatly store and edit their own contacts and be able to add instruments to the public list.
 
 ---
 
@@ -47,4 +49,4 @@ Each contact card has storage for Name, Email Address, Instrumnet, Location, wil
 ---
 
 Image credits:
-- 
+- https://www.123rf.com/photo_44108328_vector-illustration-of-ringing-red-stationary-phone-with-music-notes-symbols-old-red-telephone-red-p.html

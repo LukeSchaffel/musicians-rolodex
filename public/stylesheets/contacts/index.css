@@ -2,3 +2,8 @@
   font-size: large;
 }
 
+#title-div {
+  background-color: rgb(142,142,141);
+  width: 100%;
+  text-align: center;
+}
