@@ -1,22 +1,11 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/contacts/index.css">
 <%- include('../partials/nav') %>
-<!-- <form
-  action="/contacts"
-  method="GET"
-  class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
-          >
-<input
-    id="search"
-    class="form-control form-control-dark"
-    type="search"
-    name="name"
-    placeholder="Search name..."
-    value=" <%= contacts.name %> "
-    autocomplete="off"
-  /> -->
+
 <main>
   <h1>My Contacts</h1>
-  <a href="/contacts/new"><button class="btn btn-primary">Add New Contact</button></a>
+
+  <a href="/contacts/new"><button class="btn btn-primary">Add New Contact  <i class="fa-solid fa-square-plus"></i></button></a>
   
 <% contacts.forEach(contact => { %>
   <div class="card">
@@ -26,9 +15,10 @@
       <p class="card-text">
         
       </p>
-      <a href="/contacts/<%= contact._id %>" class="btn btn-primary">Details</a>
+      <a href="/contacts/<%= contact._id %>" class="btn btn-primary">Details <i class="fa-solid fa-circle-info"></i></a>
     </div>
   </div>
 <% }) %>
+
 </main>
 <%- include('../partials/footer') %>

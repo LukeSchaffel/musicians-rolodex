@@ -19,7 +19,7 @@
             <button class="btn btn-danger">DELETE</button>
           </form>
           <form action="/contacts/<%= contact._id %>/edit" method="GET">
-            <button class="btn btn-outline-primary">EDIT</button>
+            <button class="btn btn-outline-primary">EDIT <i class="fa-solid fa-pen-to-square"></i></button>
           </form>
       </div>
       </div>
@@ -33,7 +33,7 @@
         <label>
           <input type="text" name="content">
         </label>
-        <button type="submit">Add Note</button>
+        <button type="submit">Add Note <i class="fa-solid fa-plus"></i></button>
       </form>  
 
         <ul class="card-text">
@@ -42,10 +42,10 @@
             <li  id="note-text">
                 <%= note.content %>
                 <form action="/contacts/<%= contact._id %>/notes/<%= note.id %>?_method=DELETE" method="POST" style="display: inline-block;">
-                <button type="submit" class="btn btn-danger">DELETE</button>
+                <button type="submit" class="btn btn-danger">DELETE<i class="fa-solid fa-comment-xmark"></i> </button>
                 </form>
                 <form action="/contacts/<%= contact._id %>/notes/<%= note._id %>" method="GET" name="noteId">
-                <button type="submit" class="btn btn-outline-primary">Edit Note</button>
+                <button type="submit" class="btn btn-outline-primary">Edit Note <i class="fa-solid fa-pen-to-square"></i></button>
                 </form>
               </li>
             <% }) %>
