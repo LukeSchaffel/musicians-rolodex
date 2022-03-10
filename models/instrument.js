@@ -3,7 +3,8 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const instrumentSchema = new Schema({
-  name: String
+  name: String,
+  creator: { type: Schema.Types.ObjectId, ref: "Profile" }
 }, 
 )
 

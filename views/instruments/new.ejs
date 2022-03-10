@@ -19,7 +19,10 @@
   <div class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
       <li class="list-group-item"> <%= instrument.name %></li>
-      <form action="/instruments/<%= instrument._id %>?_method=DELETE" method="POST" ><button type="submit">X</button></form> 
+      <% if (instrument.creator.equals(user?.profile._id)) { %>
+        <form action="/instruments/<%= instrument._id %>?_method=DELETE" method="POST" ><button type="submit">X</button></form> 
+       
+      <% } %>
     </ul>
   </div>
   <% }) %>
