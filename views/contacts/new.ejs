@@ -1,4 +1,3 @@
-
 <%- include('../partials/html-head') %>
 <link rel="stylesheet" href="/stylesheets/contacts/new.css">
 <%- include('../partials/nav') %>
@@ -6,66 +5,66 @@
 
 <main>
 
-
-  <h1>Enter New Contact Data</h1>
+  <div id="title-div">
+    <h1>Enter New Contact</h1>
+  </div>
   <% if (user) { %>
-   
-  
-  <form action="/contacts" method="POST" autocomplete="off" >
-    <div class="mb-3">
-      <label class="form-label">Name:
-        <input type="text" name="name" class="form-control">
-      </label>
-  </div>
-  <br>
-  <div class="mb-3">
-    <label class="form-label">Email Address:
-      <input type="text" name="email" class="form-control">
-    </label>
-  </div>
-  <br>
-  <div class="mb-3">
-    <label class="form-label">Phone Number:
-      <input type="text" name="phoneNum" class="form-control">
-    </label>
-  </div>
-  <br>
-  <div class="mb-3">
-    <label class="form-label">Instrument:
-      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="instrument">
-        <option selected>Instrument</option>
-        <% instruments.forEach(instrument => { %>
-          <option value="<%= instrument.name %>"> <%= instrument.name %>  </option>
-        <% }) %>
-     
-      </select>
-    </label>
-  </div>
-  <br>
-  <div class="mb-3">
-    <label class="form-label">Location:
-      <input type="text" name="location" class="form-control">
-    </label>
-  </div>
-  <br>   
-  <div class="mb-3">
-    <label class="form-check-label">Willing to Travel:
-      <input type="checkbox" name="willingToTravel" class="form-check-input">
-    </label>
-  </div>
-  <br>
-  <div class="mb-3">
-    <label class="form-check-label">Teaches:
-      <input type="checkbox" name="teaches" class="form-check-input">
-    </label>
-  </div>
-  <br> 
+    <form action="/contacts" method="POST" autocomplete="off">
+      <div class="mb-3">
+        <label class="form-label">Name:
+          <input type="text" name="name" class="form-control">
+        </label>
+      </div>
+      <br>
+      <div class="mb-3">
+        <label class="form-label">Email Address:
+          <input type="text" name="email" class="form-control">
+        </label>
+      </div>
+      <br>
+      <div class="mb-3">
+        <label class="form-label">Phone Number:
+          <input type="text" name="phoneNum" class="form-control">
+        </label>
+      </div>
+      <br>
+      <div class="mb-3">
+        <label class="form-label">Instrument:
+          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" name="instrument">
+            <option selected>Instrument</option>
+            <% instruments.forEach(instrument=> { %>
+              <option value="<%= instrument.name %>">
+                <%= instrument.name %>
+              </option>
+              <% }) %>
 
-    
-    <button type="submit">Save Contact</button>
-  </form>
+          </select>
+        </label>
+      </div>
+      <br>
+      <div class="mb-3">
+        <label class="form-label">Location:
+          <input type="text" name="location" class="form-control">
+        </label>
+      </div>
+      <br>
+      <div class="mb-3">
+        <label class="form-check-label">Willing to Travel:
+          <input type="checkbox" name="willingToTravel" class="form-check-input">
+        </label>
+      </div>
+      <br>
+      <div class="mb-3">
+        <label class="form-check-label">Teaches:
+          <input type="checkbox" name="teaches" class="form-check-input">
+        </label>
+      </div>
+      <br>
 
-  <% } %>
+
+      <button type="submit">Save Contact</button>
+    </form>
+
+    <% } %>
 
 <%- include('../partials/footer') %>
-

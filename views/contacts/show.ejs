@@ -40,14 +40,14 @@
         <% if (contact.notes.length) { %>
           <% contact.notes.forEach(function(note){ %>
             <li  id="note-text">
-                <%= note.content %>
-                <form action="/contacts/<%= contact._id %>/notes/<%= note.id %>?_method=DELETE" method="POST" style="display: inline-block;">
-                <button type="submit" class="btn btn-danger">DELETE<i class="fa-solid fa-comment-xmark"></i> </button>
-                </form>
-                <form action="/contacts/<%= contact._id %>/notes/<%= note._id %>" method="GET" name="noteId">
-                <button type="submit" class="btn btn-outline-primary">Edit Note <i class="fa-solid fa-pen-to-square"></i></button>
-                </form>
-              </li>
+              <%= note.content %>
+              <form action="/contacts/<%= contact._id %>/notes/<%= note.id %>?_method=DELETE" method="POST" style="display: inline-block;">
+              <button type="submit" class="btn btn-danger">DELETE<i class="fa-solid fa-comment-xmark"></i> </button>
+              </form>
+              <form action="/contacts/<%= contact._id %>/notes/<%= note._id %>" method="GET" name="noteId">
+              <button type="submit" class="btn btn-outline-primary">Edit Note <i class="fa-solid fa-pen-to-square"></i></button>
+              </form>
+            </li>
             <% }) %>
         </ul>
         <% } else { %><h3>No Notes Yet</h3><% } %>

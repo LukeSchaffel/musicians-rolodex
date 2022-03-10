@@ -1,15 +1,11 @@
 main {
-  font-family: 'Courgette', cursive;
   display: flex;
 }
 
-h1 {
-  width: 400px;
-  padding: 30px;
-}
+
 
 form {
-  background-color: white;
+  background-color: rgba(211, 211, 211);
   width: 400px;
   padding: 30px;
 }
@@ -17,4 +13,9 @@ form {
 .mb-3 {
   display: inline;
 
+}
+#title-div {
+  background-color: rgb(142,142,141);
+  width: 100%;
+  text-align: center;
 }
