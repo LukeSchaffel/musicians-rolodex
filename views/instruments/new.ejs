@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/contacts/new.css">
+<link rel="stylesheet" href="/stylesheets/instruments/new.css">
 <%- include('../partials/nav') %>
 
 
@@ -9,18 +9,22 @@
       <label class="form-label">Instrument:
         <input type="text" name="name" class="form-control">
       </label>
-  </div>
+    </div>
   <br>
-    <button type="submit" class="btn btn-primary">Add New Instrument</button>
+    <button type="submit" class="btn btn-primary" id="add-new-instrument-btn">Add New Instrument</button>
   </form>
 
   <% instruments.forEach(instrument => { %>
   <div class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item"> <%= instrument.name %></li>
+      <li class="list-group-item">  
+        <%= instrument.name %> 
       <% if (instrument.creator.equals(user?.profile._id)) { %>
         <form action="/instruments/<%= instrument._id %>?_method=DELETE" method="POST" ><button type="submit" class="btn btn-danger">X</button></form>    
       <% } %>
+
+      </li>
+      
     </ul>
   </div>
   <% }) %>
