@@ -22,13 +22,10 @@
       <% if (instrument.creator.equals(user?.profile._id)) { %>
         <form action="/instruments/<%= instrument._id %>?_method=DELETE" method="POST" ><button type="submit" class="btn btn-danger">X</button></form>    
       <% } %>
-
       </li>
-      
     </ul>
   </div>
   <% }) %>
-
 </main>
 
 <%- include('../partials/footer') %>
