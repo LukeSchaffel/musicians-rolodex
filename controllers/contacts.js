@@ -5,11 +5,8 @@ import { Instrument } from "../models/instrument.js"
 
 
 function index(req, res) {
- 
-  // console.log(req.user.profile);
   Contact.find({owner: req.user.profile._id})
   .populate("owner")
-  //if the contacts owner matches the user, show it?
   .then(contacts => {
     res.render('contacts/index', {
       contacts,
@@ -110,15 +107,12 @@ function update(req, res) {
   .populate("owner")
   .then(contact => {
     console.log(req.user.profile._id);
-    // if (contact.body.owner.equals(req.user.profile._id)) {
       req.body.willingToTravel = !!req.body.willingToTravel
       req.body.teaches = !!req.body.teaches
       contact.updateOne(req.body, {new: true})
       .then(()=> {
         res.redirect(`/contacts/${req.params.id}`)
       })
-    // } else {
-    //   }  throw new Error("NOT AUTHORIZED")
     })
     .catch(err => {
       console.log("the error:", err)
