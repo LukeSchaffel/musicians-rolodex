@@ -5,12 +5,12 @@ import { isLoggedIn } from '../middleware/middleware.js'
 const router = Router()
 
 // GET localhost:3000/instruments/new
-router.get("/new", instrumentsCtrl.new)
+router.get("/new", isLoggedIn, instrumentsCtrl.new)
 
 //POST localhost:3000/instruments
-router.post("/", instrumentsCtrl.create)
+router.post("/", isLoggedIn, instrumentsCtrl.create)
 
-router.delete('/:id', instrumentsCtrl.delete)
+router.delete('/:id', isLoggedIn, instrumentsCtrl.delete)
 
 export {
   router

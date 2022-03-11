@@ -7,7 +7,7 @@ The Musicians Rolodex is a full stack private workspace that works just like any
 
 Each contact card has storage for Name, Email Address, Instrumnet, Location, willingess to travel, wheather or not they are a teacher, and notes.
 
-Each user who signs in with their google account will be able to privatly store and edit their own collection of contacts and be able to add instruments to the public list.
+Each user who signs in with their google account will be able to privately store and edit their own collection of contacts and be able to add instruments to the public list.
 
 ---
 
